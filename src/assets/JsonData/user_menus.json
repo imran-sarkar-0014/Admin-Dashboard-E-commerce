@@ -1,0 +1,18 @@
+[
+    {
+        "icon": "person-outline",
+        "content": "Profile"
+    },
+    {
+        "icon": "cash-outline",
+        "content": "My Wallet"
+    },
+    {
+        "icon": "cog-outline",
+        "content": "Settings"
+    },
+    {
+        "icon": "log-out-outline",
+        "content": "Logout"
+    }
+]

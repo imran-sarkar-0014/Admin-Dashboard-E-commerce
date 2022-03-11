@@ -1,0 +1,29 @@
+
+interface themeInterface {
+    mode: String,
+    color: String
+}
+
+interface themeAction {
+    type: String,
+    payload: String
+}
+
+const ThemeReducer = (state: themeInterface = { mode: 'light', color: 'blue' }, action: themeAction) => {
+    switch (action.type) {
+        case 'SET_MODE':
+            return {
+                ...state,
+                mode: action.payload
+            }
+        case 'SET_COLOR':
+            return {
+                ...state,
+                color: action.payload
+            }
+        default:
+            return state
+    }
+}
+
+export default ThemeReducer
