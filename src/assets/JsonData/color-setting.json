@@ -2,31 +2,31 @@
     {
         "id": "blue",
         "name": "Blue",
-        "background": "blue-color",
+        "background": "bg-blue",
         "class": "theme-color-blue"
     },
     {
         "id": "red",
         "name": "Red",
-        "background": "red-color",
+        "background": "bg-red",
         "class": "theme-color-red"
     },
     {
         "id": "cyan",
         "name": "Cyan",
-        "background": "cyan-color",
+        "background": "bg-cyan",
         "class": "theme-color-cyan"
     },
     {
         "id": "green",
         "name": "Green",
-        "background": "green-color",
+        "background": "bg-green",
         "class": "theme-color-green"
     },
     {
         "id": "orange",
         "name": "Orange",
-        "background": "orange-color",
+        "background": "bg-orange",
         "class": "theme-color-orange"
     }
 ]

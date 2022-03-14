@@ -9,7 +9,7 @@ interface themeAction {
     payload: String
 }
 
-const ThemeReducer = (state: themeInterface = { mode: 'light', color: 'blue' }, action: themeAction) => {
+const ThemeReducer = (state: themeInterface = { mode: 'theme-mode-light', color: 'theme-color-blue' }, action: themeAction) => {
     switch (action.type) {
         case 'SET_MODE':
             return {

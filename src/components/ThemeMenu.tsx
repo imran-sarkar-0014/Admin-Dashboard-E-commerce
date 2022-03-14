@@ -21,7 +21,7 @@ const clickOutsideRef = (content_ref: any, toggle_ref: any) => {
 
 const className = {
     toggle: '',
-    menu_container: `fixed top-0 w-[300px] h-[100vh] p-[20px] z-[100] bg-skin-main shadow-skin 
+    menu_container: `fixed top-0 w-[300px] h-[100vh] p-[20px] z-[100] bg-skin-main text-skin-text shadow-skin 
     transform transition origin-bottom-left duration-700 scale-0  ease-in-cubic`,
     menu_close: 'absolute top-[17px] right-[20px] bg-transparent text-[1.5rem]',
     close_icon: 'text-[1.5rem]',
@@ -83,7 +83,7 @@ const ThemeMenu = () => {
         <div>
 
             <button ref={menuToggleRef} className={className.toggle} onClick={() => setActiveMenu()} >
-                <ion-icon class='text-[2rem]' name="color-palette-outline"></ion-icon>
+                <ion-icon class='nav-icon' name="color-palette-outline"></ion-icon>
             </button>
 
             <div ref={menuRef} className={className.menu_container + 'right-0'}>
@@ -100,10 +100,10 @@ const ThemeMenu = () => {
                         {
                             mode_settings.map((item, index) => (
                                 <li className={className.list_item} key={index} onClick={() => setMode(item)}>
-                                    <div className={` ${className.mode_list__color} ${item.background} ${item.id === currMode ? 'active' : ''}`}>
+                                    <button className={` ${className.mode_list__color} ${item.background} ${item.id === currMode ? 'active' : ''}`}>
                                         <ion-icon
                                             className={className.checkIcon} name="checkmark-outline"></ion-icon>
-                                    </div>
+                                    </button>
                                     <span>{item.name}</span>
                                 </li>
                             ))
@@ -118,9 +118,9 @@ const ThemeMenu = () => {
                         {
                             color_settings.map((item, index) => (
                                 <li className={className.list_item} key={index} onClick={() => setColor(item)}>
-                                    <div className={`${className.mode_list__color} ${item.background} ${item.id === currColor ? 'active' : ''}`}>
+                                    <button className={`${className.mode_list__color} ${item.background} ${item.id === currColor ? 'active' : ''}`}>
                                         <ion-icon className={className.checkIcon} name="checkmark-outline"></ion-icon>
-                                    </div>
+                                    </button>
                                     <span>{item.name}</span>
                                 </li>
                             ))

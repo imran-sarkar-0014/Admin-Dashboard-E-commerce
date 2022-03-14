@@ -2,13 +2,13 @@
     {
         "id": "light",
         "name": "Light",
-        "background": "light-background",
+        "background": "bg-light",
         "class": "theme-mode-light"
     },
     {
         "id": "dark",
         "name": "Dark",
-        "background": "dark-background",
+        "background": "bg-dark",
         "class": "theme-mode-dark"
     }
 ]

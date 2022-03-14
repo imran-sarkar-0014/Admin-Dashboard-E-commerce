@@ -23,7 +23,7 @@ const clickOutsideRef = (content_ref: any, toggle_ref: any) => {
 const className = {
     dropdown: 'relative z-[100]',
     toggleButton: 'border-none outline-none bg-transparent relative',
-    icon: 'text-[2rem] text-skin-text',
+    icon: 'nav-icon text-skin-text',
     badge: `flex items-center justify-center absolute -top-[12px] -right-[10px] w-[25px]
             rounded-full bg-skin-main text-skin-white text-[0.8rem]`,
     content: `absolute top-[calc(100%+5px)] right-0 w-max max-w-[400px] bg-skin-main shadow-skin rounded-skin

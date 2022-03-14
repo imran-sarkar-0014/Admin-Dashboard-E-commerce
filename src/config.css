@@ -2,10 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+.nav-icon {
+    @apply text-[1.3rem] md:text-[2rem] text-skin-text
+}
+
+.nav-avatar {
+    @apply h-[25px] w-[25px] md:h-[40px] md:w-[40px] rounded-full overflow-hidden mr-[5px]
+}
+
 .active{
     @apply scale-100 transition transform duration-500 ease-in-out
 }
 
 .active-theme {
     @apply right-0 scale-100 transition transform duration-500 origin-top-right ease-in-out
+}
+
+.w-none {
+    @apply w-0
+}
+
+.bg-light {
+    @apply bg-white
+}
+
+.bg-dark{
+    @apply bg-black
+}
+
+/* Colors */
+
+.bg-blue{
+    @apply bg-blue-500
+}
+
+.bg-red {
+    @apply bg-red-500
+}
+
+.bg-cyan{
+    @apply bg-cyan-500
+}
+
+.bg-green {
+    @apply bg-green-500
+}
+
+.bg-orange {
+    @apply bg-orange-500;
 }

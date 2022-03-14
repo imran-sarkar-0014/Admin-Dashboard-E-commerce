@@ -31,7 +31,12 @@ module.exports = {
 
         }
       },
-
+      borderColor: {
+        skin: {
+          main: 'var(--main-bg)',
+          second: 'var(--second-bg)'
+        }
+      },
       boxShadow: {
         skin: 'var(--box-shadow)'
       },

@@ -2,46 +2,31 @@
     {
         "display_name": "Dashboard",
         "route": "/",
-        "icon": "bx bx-category-alt"
+        "icon": "pie-chart-outline"
     },
     {
         "display_name": "Customers",
         "route": "/customers",
-        "icon": "bx bx-user-pin"
+        "icon": "people-outline"
     },
     {
         "display_name": "Products",
         "route": "/products",
-        "icon": "bx bx-package"
+        "icon": "cart-outline"
     },
     {
         "display_name": "Orders",
         "route": "/orders",
-        "icon": "bx bx-cart"
+        "icon": "bag-handle-outline"
     },
     {
         "display_name": "Analytics",
         "route": "/analytics",
-        "icon": "bx bx-bar-chart-alt"
-    },
-    {
-        "display_name": "categories",
-        "route": "/categories",
-        "icon": "bx bx-list-ol"
-    },
-    {
-        "display_name": "discount",
-        "route": "/discount",
-        "icon": "bx bx-gift"
-    },
-    {
-        "display_name": "inventory",
-        "route": "/inventory",
-        "icon": "bx bx-store-alt"
+        "icon": "bar-chart-outline"
     },
     {
         "display_name": "settings",
         "route": "/settings",
-        "icon": "bx bx-cog"
+        "icon": "cog-outline"
     }
 ]

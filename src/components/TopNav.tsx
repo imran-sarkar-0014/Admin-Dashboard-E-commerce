@@ -2,8 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Dropdown from './Dropdown'
 import ThemeMenu from './ThemeMenu'
+import navAction from '../redux/actions/navAction'
+
+
 import user_menu from '../assets/JsonData/user_menus.json'
 import notifications from '../assets/JsonData/notification.json'
+import { useDispatch } from 'react-redux'
 
 const height = '110px'
 
@@ -15,25 +19,26 @@ const curr_user = {
 
 
 const className = {
-    topnav: "p-[30px] flex items-center justify-between bg-skin-main ",
-    search: "relative px-4 h-[50px] flex items-center shadow-skin rounded-skin text-skin-text bg-skin-main",
-    input: 'outline-none h-full w-full py-[10px] pr-[60px] pl-[20px] text-[1rem] rounded-skin text-skin-text bg-skin-main',
-    icon: 'text-[1.5rem] absolute right-[20px]',
+    topnav: "oveflow-hidden w-full py-[20px] px-[15px] flex items-center justify-between bg-skin-main ",
+    search: "relative px-2 h-[50px] flex items-center shadow-skin rounded-skin text-skin-text bg-skin-main",
+    input: 'outline-none h-full w-full py-[10px] pr-[30px] pl-[10px] text-[1rem] rounded-skin text-skin-text bg-skin-main',
+    icon: 'text-[1.5rem] absolute right-[10px]',
     right: 'flex items-center',
-    right_item: 'ml-[30px]',
+    right_item: 'ml-[12px]',
 
+
+    navToggler: 'text-skin-text text-[3rem] md:hidden cursor-pointer transform duration-300 hover:scale-75 transition-transform',
 
     // profile
-    profile: 'flex items-center',
-    avatar: 'w-[40px] h-[40px] rounded-full overflow-hidden mr-[10px]',
+    profile: 'flex items-center flex-col md:flex-row',
+    avatar: 'nav-avatar',
     img: 'w-full object-cover',
-    name: 'text-[1rem] font-semibold',
+    name: 'text-[0.75rem] md:text-[1.2rem] font-semibold whitespace-nowrap text-skin-text',
 
     // notifictions
-    notification_item: 'flex items-center p-[20px] hover:bg-skin-second',
-    notify_icon: 'mr-[20px] text-[1.5rem]'
-
-
+    notification_item: 'flex max-w-xs md:max-w-max items-center px-[10px] md:px-[20px] py-[20px] bg-skin-main text-skin-text hover:bg-skin-second',
+    notify_icon: 'mr-[20px] text-[1.5rem]',
+    notification_footer: 'text-skin-text',
 }
 
 
@@ -69,9 +74,18 @@ const renderUserMenu = (item: any, index: any) => (
 
 
 const TopNav = () => {
+
+    const dispatch = useDispatch()
+
+    const onNavToggle = () => {
+
+        dispatch(navAction.toggleNav())
+    }
+
     return (
         <div className={className.topnav + `${height}`}>
 
+            <ion-icon onClick={onNavToggle} class={className.navToggler} name="reorder-four-outline"></ion-icon>
             {/* Search */}
             <div className={className.search}>
                 <input className={className.input} type="text" placeholder='Search here...' />
@@ -98,7 +112,7 @@ const TopNav = () => {
                         badge='12'
                         contentData={notifications}
                         renderItems={(item: any, index: any) => renderNotificationItem(item, index)}
-                        renderFooter={() => <Link to='/'>View All</Link>}
+                        renderFooter={() => <Link className={className.notification_footer} to='/'>View All</Link>}
                     />
                 </div>
 
@@ -110,7 +124,7 @@ const TopNav = () => {
             </div>
 
 
-        </div>
+        </div >
     )
 }
 
