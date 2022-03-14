@@ -12,8 +12,8 @@ import { useDispatch } from 'react-redux'
 const height = '110px'
 
 const curr_user = {
-    display_name: 'Tuat Tran',
-    image: '/images/tuat.png'
+    display_name: 'Adam Smith',
+    image: '/images/profile.jpg'
 }
 
 

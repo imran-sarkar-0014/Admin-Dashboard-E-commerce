@@ -1,22 +1,22 @@
 [
     {
         "icon": "bag-handle",
-        "count": "1,995",
-        "title": "Total sales"
+        "count": "2, 468",
+        "title": "Daily Sales"
     },
     {
         "icon": "eye",
-        "count": "2,001",
+        "count": "7,609",
         "title": "Daily visits"
     },
     {
         "icon": "logo-usd",
-        "count": "$2,632",
-        "title": "Total income"
+        "count": "$6,732",
+        "title": "Weekly Income"
     },
     {
         "icon": "cart",
-        "count": "1,711",
+        "count": "1, 958",
         "title": "Total orders"
     }
 ]

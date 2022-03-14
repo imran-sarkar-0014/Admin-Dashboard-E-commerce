@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { Provider } from 'react-redux'
-import Layout from './components/Layout'
+import { QueryClientProvider, QueryClient } from 'react-query'
 
 import store from './redux'
 import App from './App';
@@ -18,15 +18,19 @@ declare global {
   }
 }
 
+const client = new QueryClient()
+
 
 ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>,
-    </BrowserRouter>
-  </Provider>,
+  <QueryClientProvider client={client}>
+    <Provider store={store}>
+      <BrowserRouter>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>,
+      </BrowserRouter>
+    </Provider>
+  </QueryClientProvider>,
   document.getElementById('root')
 );
 

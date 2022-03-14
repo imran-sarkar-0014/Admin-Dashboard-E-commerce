@@ -9,9 +9,9 @@ interface statusInterface {
 
 
 const className = {
-    container: 'status-card p-[30px] flex flex-col items-center bg-skin-main shadow-skin rounded-skin relative overflow-hidden ',
+    container: 'status-card my-2 mx-2  p-[30px] flex flex-col items-center bg-skin-main shadow-skin rounded-skin relative overflow-hidden ',
     icon: 'text-[3rem] text-skin-text',
-    info: 'flex z-10 capitalize flex-col md:flex-row items-center text-skin-text',
+    info: 'flex z-10 capitalize flex-col items-center text-skin-text',
     count: 'text-[1.5rem]',
 }
 

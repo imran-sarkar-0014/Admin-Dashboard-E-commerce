@@ -1,7 +1,5 @@
 import React from 'react'
 import Table from '../components/Table'
-import axios from 'axios'
-
 
 
 const className = {
@@ -36,45 +34,21 @@ const renderBody = (item: any, index: any) => (
 
 const Orders = () => {
 
-    const [orders, setOrders] = React.useState([])
+
 
     React.useEffect(() => {
-        const getProducts = async () => {
-            const response = await axios.get('https://fakestoreapi.com/carts')
-
-            const _orders: any = []
-
-            await response.data.map(async (order: any) => {
-                const { userId, date } = order
-                await order.products.map(async (prod: any) => {
-                    const product = await axios.get(`https://fakestoreapi.com/products/${prod.productId}`)
-
-                    const a_order = {
-                        id: order.id,
-                        userId: userId,
-                        date: date,
-                        quantity: prod.quantity,
-                        title: product.data.title,
-                        price: product.data.price,
-                        total: product.data.price * prod.quantity
-                    }
-                    _orders.push(a_order)
-                })
-            })
-
-            setOrders(_orders)
-        }
-        getProducts()
     }, [])
 
-    console.log(orders)
+
 
     return (
         <div className={className.wrapper}>
+
             <h3 className={className.heading}>Orders</h3>
             <div className={className.container}>
                 {
-                    orders.length > 0 && (
+
+                    (
                         <Table
                             headData={headData}
                             renderHead={(item: any, index: any) => renderHead(item, index)}
@@ -91,3 +65,133 @@ const Orders = () => {
 
 
 export default Orders
+
+
+const orders = [
+    {
+        "id": 1,
+        "userId": 1,
+        "date": "2020-03-02T00:00:02.000Z",
+        "quantity": 4,
+        "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        "price": 109.95,
+        "total": 439.8
+    },
+    {
+        "id": 1,
+        "userId": 1,
+        "date": "2020-03-02T00:00:02.000Z",
+        "quantity": 1,
+        "title": "Mens Casual Premium Slim Fit T-Shirts ",
+        "price": 22.3,
+        "total": 22.3
+    },
+    {
+        "id": 1,
+        "userId": 1,
+        "date": "2020-03-02T00:00:02.000Z",
+        "quantity": 6,
+        "title": "Mens Cotton Jacket",
+        "price": 55.99,
+        "total": 335.94
+    },
+    {
+        "id": 2,
+        "userId": 1,
+        "date": "2020-01-02T00:00:02.000Z",
+        "quantity": 2,
+        "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+        "price": 695,
+        "total": 1390
+    },
+    {
+        "id": 5,
+        "userId": 3,
+        "date": "2020-03-01T00:00:02.000Z",
+        "quantity": 1,
+        "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+        "price": 10.99,
+        "total": 10.99
+    },
+    {
+        "id": 5,
+        "userId": 3,
+        "date": "2020-03-01T00:00:02.000Z",
+        "quantity": 1,
+        "title": "White Gold Plated Princess",
+        "price": 9.99,
+        "total": 9.99
+    },
+    {
+        "id": 3,
+        "userId": 2,
+        "date": "2020-03-01T00:00:02.000Z",
+        "quantity": 1,
+        "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+        "price": 64,
+        "total": 64
+    },
+    {
+        "id": 6,
+        "userId": 4,
+        "date": "2020-03-01T00:00:02.000Z",
+        "quantity": 2,
+        "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+        "price": 109,
+        "total": 218
+    },
+    {
+        "id": 6,
+        "userId": 4,
+        "date": "2020-03-01T00:00:02.000Z",
+        "quantity": 3,
+        "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+        "price": 114,
+        "total": 342
+    },
+    {
+        "id": 6,
+        "userId": 8,
+        "date": "2020-03-01T00:00:02.000Z",
+        "quantity": 1,
+        "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+        "price": 9.85,
+        "total": 9.85
+    },
+    {
+        "id": 2,
+        "userId": 1,
+        "date": "2020-01-02T00:00:02.000Z",
+        "quantity": 10,
+        "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        "price": 109.95,
+        "total": 1099.5
+    },
+    {
+        "id": 2,
+        "userId": 1,
+        "date": "2020-01-02T00:00:02.000Z",
+        "quantity": 4,
+        "title": "Mens Casual Premium Slim Fit T-Shirts ",
+        "price": 22.3,
+        "total": 89.2
+    },
+    {
+        "id": 3,
+        "userId": 2,
+        "date": "2020-03-01T00:00:02.000Z",
+        "quantity": 2,
+        "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        "price": 109.95,
+        "total": 219.9
+    },
+    {
+        "id": 4,
+        "userId": 3,
+        "date": "2020-01-01T00:00:02.000Z",
+        "quantity": 4,
+        "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        "price": 109.95,
+        "total": 439.8
+    }
+]

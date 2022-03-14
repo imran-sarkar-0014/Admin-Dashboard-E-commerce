@@ -18,7 +18,7 @@ const className = {
 
     sidebar__item: 'border-l-2 border-skin-second p-2 hover:bg-skin-second',
     sidebar__item_inner: 'flex items-center',
-    icon: 'text-[2.3rem] mr-4 text-skin-main',
+    icon: 'text-[2rem] py-2 mr-4 text-skin-main',
     item_name: 'text-lg',
     active: 'border-skin-main bg-skin-second'
 }

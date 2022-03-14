@@ -9,7 +9,7 @@ import status_cart from '../assets/JsonData/status-card-data.json'
 
 
 const className = {
-    pageName: 'text-4xl text-skin-text',
+    pageName: 'text-4xl my-8 mx-4 text-skin-text',
     container: 'h-full w-full overflow-y-auto',
     grid: 'grid md:grid-cols-2 ',
     grid_item: '',
@@ -67,19 +67,7 @@ const Dashboard = () => {
 
             <div className={className.grid}>
 
-                <div className={className.card_container}>
-                    {
-                        status_cart.map((item, index) => (
-                            <div>
-                                <StatusCard
-                                    icon={item.icon}
-                                    count={item.count}
-                                    title={item.title}
-                                />
-                            </div>
-                        ))
-                    }
-                </div>
+
                 <div className={className.chart} >
                     <Chart
                         options={{
@@ -100,6 +88,22 @@ const Dashboard = () => {
                         height='100%'
                     />
                 </div>
+
+                <div className={className.card_container}>
+                    {
+                        status_cart.map((item, index) => (
+                            <div>
+                                <StatusCard
+                                    icon={item.icon}
+                                    count={item.count}
+                                    title={item.title}
+                                />
+                            </div>
+                        ))
+                    }
+                </div>
+
+
             </div>
 
 
@@ -165,13 +169,13 @@ export default Dashboard
 const chartOptions = {
     series: [{
         name: 'Online Customers',
-        data: [40, 70, 20, 90, 36, 80, 30, 91, 60]
+        data: [40, 36, 80, 30, 91, 60, 70, 20, 90,]
     }, {
         name: 'Store Customers',
-        data: [40, 30, 70, 80, 40, 16, 40, 20, 51, 10]
+        data: [46, 31, 40, 90, 70, 69, 46, 70, 31, 49]
     }],
     options: {
-        colors: ['#6ab04c', '#2980b9'],
+        colors: ['#1a6e77', '#0a9621'],
         chart: {
             background: 'transparent'
         },
